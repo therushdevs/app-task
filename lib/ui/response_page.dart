@@ -9,6 +9,15 @@ class ResponsesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final watchProvider = context.read<ResponsesProvider>();
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Your Responses',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: ListView.builder(
