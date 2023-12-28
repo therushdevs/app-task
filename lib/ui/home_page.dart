@@ -1,5 +1,6 @@
 import 'package:api_task/providers/QuestionsProvider.dart';
-import 'package:api_task/providers/radio_state_provider.dart';
+import 'package:api_task/providers/responses_provider.dart';
+import 'package:api_task/ui/response_page.dart';
 import 'package:api_task/widgets/progress_line_widget.dart';
 import 'package:api_task/widgets/question_widget.dart';
 import 'package:flutter/material.dart';
@@ -34,11 +35,26 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'About Loan',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'About Loan',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ResponsesPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('See Responses'),
+                  ),
+                ],
               ),
             ),
             ProgressLineWidget(
@@ -85,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    final provider = context.read<RadioStateProvider>();
+                    final provider = context.read<ResponsesProvider>();
                     provider.clearSelections();
                   },
                   child: const Text("Clear All Selections"),

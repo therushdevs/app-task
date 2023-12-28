@@ -1,5 +1,5 @@
 import 'package:api_task/models/questions_model.dart';
-import 'package:api_task/providers/radio_state_provider.dart';
+import 'package:api_task/providers/responses_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,9 +23,19 @@ class SingleChoiceSelector extends StatelessWidget {
             ? Padding(
                 padding: const EdgeInsets.only(bottom: 18.0),
                 child: TextFormField(
+                  keyboardType:
+                      question.type == "Numeric" ? TextInputType.number : null,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    print("Strings ${value}");
+                    final responsesProvider = context.read<ResponsesProvider>();
+                    responsesProvider.addResponses(
+                      question.schema!.label,
+                      value,
+                    );
+                  },
                   maxLines: 3,
                 ),
               )
@@ -34,7 +44,7 @@ class SingleChoiceSelector extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: question.schema!.options!.length,
                   itemBuilder: (context, index) {
-                    final providerWatch = context.watch<RadioStateProvider>();
+                    final providerWatch = context.watch<ResponsesProvider>();
                     return Row(
                       children: [
                         Radio(
@@ -42,10 +52,15 @@ class SingleChoiceSelector extends StatelessWidget {
                             groupValue: providerWatch
                                 .radioValues[question.schema!.name],
                             onChanged: (value) {
-                              final radioProvider =
-                                  context.read<RadioStateProvider>();
-                              radioProvider.updateSelections(
+                              final responsesProvider =
+                                  context.read<ResponsesProvider>();
+                              responsesProvider.updateSelections(
                                   question.schema!.name, index + 1);
+
+                              responsesProvider.addResponses(
+                                question.schema!.label,
+                                question.schema!.options![index].value,
+                              );
                             }),
                         Text(question.schema!.options![index].value)
                       ],
