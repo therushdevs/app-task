@@ -1,7 +1,6 @@
-import 'package:api_task/providers/QuestionsProvider.dart';
-import 'package:api_task/providers/responses_provider.dart';
-import 'package:api_task/ui/finance_home_page.dart';
-import 'package:api_task/ui/promilo_home_page.dart';
+import 'package:api_task/finmapp(airpay)/providers/QuestionsProvider.dart';
+import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
+import 'package:api_task/promilo/ui/promilo_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
