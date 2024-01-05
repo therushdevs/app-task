@@ -1,4 +1,4 @@
-import 'package:api_task/widgets/divider_part_wodget.dart';
+import 'package:api_task/finmapp(airpay)/widgets/divider_part_wodget.dart';
 import 'package:flutter/material.dart';
 
 class ProgressLineWidget extends StatelessWidget {

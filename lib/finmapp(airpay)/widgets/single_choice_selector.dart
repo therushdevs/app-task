@@ -1,5 +1,5 @@
-import 'package:api_task/models/questions_model.dart';
-import 'package:api_task/providers/responses_provider.dart';
+import 'package:api_task/finmapp(airpay)/models/questions_model.dart';
+import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

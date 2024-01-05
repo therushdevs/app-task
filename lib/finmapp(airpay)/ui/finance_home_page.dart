@@ -1,8 +1,8 @@
-import 'package:api_task/providers/QuestionsProvider.dart';
-import 'package:api_task/providers/responses_provider.dart';
-import 'package:api_task/ui/response_page.dart';
-import 'package:api_task/widgets/progress_line_widget.dart';
-import 'package:api_task/widgets/question_widget.dart';
+import 'package:api_task/finmapp(airpay)/providers/QuestionsProvider.dart';
+import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
+import 'package:api_task/finmapp(airpay)/ui/response_page.dart';
+import 'package:api_task/finmapp(airpay)/widgets/progress_line_widget.dart';
+import 'package:api_task/finmapp(airpay)/widgets/question_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,5 @@
-import 'package:api_task/models/questions_model.dart';
-import 'package:api_task/widgets/single_choice_selector.dart';
+import 'package:api_task/finmapp(airpay)/models/questions_model.dart';
+import 'package:api_task/finmapp(airpay)/widgets/single_choice_selector.dart';
 import 'package:flutter/material.dart';
 
 class QuestionWidget extends StatelessWidget {
