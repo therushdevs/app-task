@@ -1,6 +1,7 @@
 import 'package:api_task/providers/QuestionsProvider.dart';
 import 'package:api_task/providers/responses_provider.dart';
-import 'package:api_task/ui/home_page.dart';
+import 'package:api_task/ui/finance_home_page.dart';
+import 'package:api_task/ui/promilo_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const PromiloHomePage(),
     );
   }
 }
