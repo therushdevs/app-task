@@ -1,4 +1,4 @@
-import 'package:api_task/constants.dart';
+import 'package:api_task/promilo/constants.dart';
 import 'package:flutter/material.dart';
 
 class OtherPages extends StatelessWidget {

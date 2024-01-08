@@ -1,8 +1,7 @@
-import 'package:api_task/constants.dart';
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/promilo/constants.dart';
 import 'package:api_task/promilo/ui/description_page.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class MeetUpPage extends StatefulWidget {
   const MeetUpPage({super.key});

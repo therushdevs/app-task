@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:api_task/constants.dart';
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/promilo/constants.dart';
 import 'package:api_task/promilo/promilo_auth_provider.dart';
 import 'package:api_task/promilo/ui/promilo_home_page.dart';
 import 'package:api_task/promilo/widgets/loader.dart';
