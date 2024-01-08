@@ -1,5 +1,6 @@
 import 'package:api_task/finmapp(airpay)/providers/QuestionsProvider.dart';
 import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
+import 'package:api_task/fydaa/app.dart';
 import 'package:api_task/promilo/promilo_auth_provider.dart';
 import 'package:api_task/promilo/ui/app.dart';
 import 'package:api_task/promilo/ui/promilo_auth_page.dart';
@@ -12,7 +13,7 @@ void main() {
       ChangeNotifierProvider<QuestionsProvider>(
           create: (_) => QuestionsProvider()),
     ],
-    child: const MyApp(),
+    child: const FydaaApp(),
   ));
 
   // promilo & finapp
