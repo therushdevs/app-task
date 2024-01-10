@@ -1,4 +1,6 @@
+import 'package:api_task/fydaa/ui/fyda_phone_page.dart';
 import 'package:api_task/fydaa/ui/fydaa_home_page.dart';
+import 'package:api_task/fydaa/ui/fydaa_otp_page.dart';
 import 'package:flutter/material.dart';
 
 class FydaaApp extends StatelessWidget {
@@ -6,8 +8,10 @@ class FydaaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: FydaaHomePage(),
+    return MaterialApp(
+      theme: ThemeData(appBarTheme: AppBarTheme()),
+      debugShowCheckedModeBanner: false,
+      home: const FydaaPhonePage(),
     );
   }
 }
