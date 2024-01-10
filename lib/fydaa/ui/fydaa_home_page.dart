@@ -10,9 +10,16 @@ class FydaaHomePage extends StatefulWidget {
 class _FydaaHomePageState extends State<FydaaHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(
-      child: Text("We are home"),
-    ));
+    return Scaffold(
+        appBar: AppBar(),
+        body: const Center(
+          child: Text(
+            "Welcome to Fydaa!",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ));
   }
 }
