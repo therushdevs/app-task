@@ -59,9 +59,11 @@ class _FydaaPhonePageState extends State<FydaaPhonePage> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 TextFormField(
+                  maxLength: 10,
                   keyboardType: TextInputType.phone,
                   controller: _phoneNumberController,
                   decoration: const InputDecoration(
+                    counterText: "",
                     border: OutlineInputBorder(),
                   ),
                   onChanged: (value) {
