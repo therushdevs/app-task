@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:api_task/fydaa/providers/fyaa_auth_provider.dart';
+import 'package:api_task/fydaa/ui/fydaa_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -287,25 +288,27 @@ class _FydaaOtpPageState extends State<FydaaOtpPage> {
                 )
                 .toList(),
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.check,
-                  color: Colors.white,
-                ),
-                Text(
-                  'Verified',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: otpSuccess != null
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        otpSuccess! ? Icons.check : Icons.close,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        otpSuccess! ? 'Verified' : "Invalid Otp",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  )
+                : const SizedBox(),
           ),
         ],
       ),
@@ -335,6 +338,13 @@ class _FydaaOtpPageState extends State<FydaaOtpPage> {
       if (otp == "93447") {
         setState(() {
           otpSuccess = true;
+        });
+        Future.delayed(const Duration(microseconds: 250), () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => const FydaaHomePage(),
+            ),
+          );
         });
       } else {
         setState(() {
