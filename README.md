@@ -1,8 +1,17 @@
 # api_task
-
-A new Flutter project.
+This repo contains the application tasks.
 
 ## Getting Started
+
+- Inside /lib/main.dart is the entry point for the application to run.
+- Open the /lib/ directory & go to the /lib/conpany_name directory to access all the task code.
+- Each company_name/ directory contains three sub_directories as shown below,
+  - ui -> containing all the UI for the task
+  - widgets -> containing common custom reusable widgets
+  - models -> containing all the model classes required to handle data
+  - providers -> providers handling state management throughout the task
+- /lib/core - This directory contains all the core logic/widgets/constants/styles/ui components etc.
+ 
 
 ## Screenshots
 Fydaa Task                 |  Fydaa Task               |  Fydaa Task               |  Fydaa Task               |
