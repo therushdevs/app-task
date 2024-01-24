@@ -1,3 +1,5 @@
+import 'package:api_task/mobigic/route_generator.dart';
+import 'package:api_task/mobigic/routes.dart';
 import 'package:api_task/mobigic/ui/mobigic_home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,9 @@ class MobigicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navKey,
+      initialRoute: Routes.splashPageRoute,
+      onGenerateRoute: RouteGenerator.onGenerateRoute,
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 245, 248, 250),
         useMaterial3: false,
