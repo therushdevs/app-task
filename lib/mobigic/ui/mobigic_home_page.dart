@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:api_task/mobigic/providers/grid_provider.dart';
+import 'package:api_task/mobigic/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
@@ -93,6 +94,15 @@ class _MobigicHomePageState extends State<MobigicHomePage> {
                       }),
                 ),
               ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size.fromHeight(50),
+              ),
+              onPressed: () {
+                navKey.currentState?.pushNamed(Routes.rowAndColumnPageRoute);
+              },
+              child: const Text('Reset'),
+            ),
           ],
         ),
       ),

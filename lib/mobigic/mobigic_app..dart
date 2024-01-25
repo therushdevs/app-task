@@ -32,22 +32,22 @@ class MobigicApp extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
+          elevatedButtonTheme: const ElevatedButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              elevation: const MaterialStatePropertyAll(0),
-              backgroundColor: const MaterialStatePropertyAll(
-                  Color.fromARGB(255, 143, 157, 247)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6.0),
-                  side: BorderSide(
-                    color: Colors.blue.shade700,
-                    width: 2.5,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-              ),
+              elevation: MaterialStatePropertyAll(0),
+              // backgroundColor: const MaterialStatePropertyAll(
+              //     Color.fromARGB(255, 143, 157, 247)),
+              // shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              //   RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(6.0),
+              //     side: BorderSide(
+              //       color: Colors.blue.shade700,
+              //       width: 2.5,
+              //       style: BorderStyle.solid,
+              //     ),
+              //   ),
+              // ),
             ),
           ),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
