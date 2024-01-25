@@ -14,12 +14,16 @@ This repo contains the application tasks.
  
 
 ## Screenshots
+
+
+Mobigic Task                 |  Mobigic Task               |  Mobigic Task               |  Mobigic Task               |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+![WhatsApp Image 2024-01-25 at 9 11 32 PM](https://github.com/the-dapp-coder/app-task/assets/51785772/5334e422-05f4-4023-bb64-5f611bbcfb25) | ![WhatsApp Image 2024-01-25 at 9 11 32 PM (1)](https://github.com/the-dapp-coder/app-task/assets/51785772/3d7efe8d-3440-470c-9a21-dffdbed4583f) | ![WhatsApp Image 2024-01-25 at 9 11 32 PM (2)](https://github.com/the-dapp-coder/app-task/assets/51785772/4703081e-73bc-4c82-96e0-32a122bd6f96) | ![WhatsApp Image 2024-01-25 at 9 11 33 PM](https://github.com/the-dapp-coder/app-task/assets/51785772/85774f98-a254-4ffc-bada-1a93ff0282c4) | 
+
+
 Fydaa Task                 |  Fydaa Task               |  Fydaa Task               |  Fydaa Task               |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
 ![WhatsApp Image 2024-01-11 at 2 34 38 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/eb48f950-4871-46ad-8c87-722dac49996d) | ![WhatsApp Image 2024-01-11 at 2 34 38 AM (1)](https://github.com/the-dapp-coder/app-task/assets/51785772/549480cb-eb6c-4e45-b31e-639dde7205b9) | ![WhatsApp Image 2024-01-11 at 2 34 39 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/b41ee1b2-2bdd-4d0a-8138-ccc5b76bb4a0) | ![WhatsApp Image 2024-01-11 at 2 34 39 AM (1)](https://github.com/the-dapp-coder/app-task/assets/51785772/b5390f7c-bb28-416f-8947-f08d9b871326) | 
-
-
-
 
 
 Promilo Task             |  Promilo Task             |  Promilo Task             |  Promilo Task             |  Promilo Task             | 
