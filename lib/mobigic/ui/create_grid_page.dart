@@ -49,6 +49,14 @@ class _CreateGridPageState extends State<CreateGridPage> {
           child: Column(
             children: [
               TextFormField(
+                validator: (value) {
+                  if (value != null && value.isEmpty) {
+                    return "Cannot be Empty...";
+                  } else if (value!.length < (_rows * _cols)) {
+                    return "add more ${(_rows * _cols) - value.length} characters";
+                  }
+                  return null;
+                },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                 ),
