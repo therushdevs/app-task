@@ -1,6 +1,9 @@
 import 'dart:math';
 
+import 'package:api_task/mobigic/providers/grid_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 class MobigicHomePage extends StatefulWidget {
   const MobigicHomePage({super.key});
@@ -12,15 +15,22 @@ class MobigicHomePage extends StatefulWidget {
 class _MobigicHomePageState extends State<MobigicHomePage> {
   int m = 4;
   int n = 3;
-  final List<List<String>> _grid = [
-    ['A', 'B', 'C', 'D', 'H'],
-    ['E', 'F', 'G', 'H', 'H'],
-    ['S', 'T', 'U', 'X', 'H'],
-    ['N', 'M', 'S', 'T', 'H'],
-  ];
-  List<List<int>> indexes = [];
-  final TextEditingController _searchTextController = TextEditingController();
+  List<List<String>> _grid = [];
+  late TextEditingController _searchTextController;
   List<List<int>> result = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _searchTextController = TextEditingController();
+    _grid = context.read<GridProvider>().getCharGrid();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _searchTextController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,35 +52,47 @@ class _MobigicHomePageState extends State<MobigicHomePage> {
                       result =
                           getWordIndices(_grid, _searchTextController.text);
                     });
-                    print('result: ${result}');
+                    if (result.isEmpty) {
+                      Fluttertoast.showToast(
+                        msg: 'Word Not found',
+                      );
+                    }
+                    print('result: $result');
                   },
                   icon: const Icon(Icons.search),
                 ),
               ),
             ),
-            Expanded(
-              child: GridView.builder(
-                  itemCount: (_grid[0].length * _grid.length),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 5,
-                    crossAxisCount: _grid[0].length,
-                  ),
-                  itemBuilder: (context, index) {
-                    int row = index ~/ _grid[0].length;
-                    int col = index % _grid[0].length;
-                    final indexList = [row, col];
-                    return Container(
-                      margin: const EdgeInsets.all(4),
-                      color: contains(indexList) ? Colors.blue : null,
-                      child: Center(
-                        child: Text(
-                          _grid[row][col],
-                          textAlign: TextAlign.center,
-                        ),
+            if (_grid.isNotEmpty)
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 28.0),
+                  child: GridView.builder(
+                      itemCount: (_grid[0].length * _grid.length),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 5,
+                        crossAxisCount: _grid[0].length,
                       ),
-                    );
-                  }),
-            ),
+                      itemBuilder: (context, index) {
+                        int row = index ~/ _grid[0].length;
+                        int col = index % _grid[0].length;
+                        final indexList = [row, col];
+                        return Card(
+                          color: contains(indexList) ? Colors.blue : null,
+                          child: Container(
+                            // margin: const EdgeInsets.all(1),
+                            // color: contains(indexList) ? Colors.blue : null,
+                            child: Center(
+                              child: Text(
+                                _grid[row][col],
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                ),
+              ),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GridProvider extends ChangeNotifier {
-  List<List<int>> _charGrid = [];
+  List<List<String>> _charGrid = [];
   int _rows = 0;
   int _cols = 0;
 
@@ -21,17 +21,21 @@ class GridProvider extends ChangeNotifier {
     return _cols;
   }
 
-  List<List<String>> gridConversion(String characters) {
+  List<List<String>> getCharGrid() {
+    return _charGrid;
+  }
+
+  void gridConversion(String characters) {
     List<List<String>> grid = [];
     int j = 0;
-    for (int i = 0; i < _rows; i++) {
+    for (int i = 1; i <= _rows; i++) {
       List<String> temp = [];
-      while (j < _cols) {
+      while (j < (i * _cols)) {
         temp.add(characters[j]);
         j++;
       }
       grid.add(temp);
     }
-    return grid;
+    _charGrid = grid;
   }
 }

@@ -31,7 +31,7 @@ class _RowsAndColumnsInputPageState extends State<RowsAndColumnsInputPage> {
           child: const Icon(Icons.skip_next),
         ),
         appBar: AppBar(
-          title: const Text('Title'),
+          title: const Text('Mobigic'),
         ),
         body: SafeArea(
           minimum: const EdgeInsets.all(10),
