@@ -15,7 +15,7 @@ class _MobigicSplashPageState extends State<MobigicSplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(milliseconds: 250), () {
+    Timer(const Duration(seconds: 1), () {
       navKey.currentState?.pushNamedAndRemoveUntil(
         Routes.rowAndColumnPageRoute,
         (routes) => false,
