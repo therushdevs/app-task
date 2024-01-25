@@ -71,23 +71,24 @@ class _CreateGridPageState extends State<CreateGridPage> {
               if (text.isNotEmpty)
                 Expanded(
                   child: GridView.builder(
-                      itemCount: text.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 5,
-                        crossAxisCount: _cols,
-                      ),
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: const EdgeInsets.all(4),
-                          color: Colors.blue,
-                          child: Center(
-                            child: Text(
-                              text[index].toUpperCase(),
-                              textAlign: TextAlign.center,
-                            ),
+                    itemCount: text.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 1,
+                      crossAxisCount: _cols,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: const EdgeInsets.all(1),
+                        color: Colors.blue,
+                        child: Center(
+                          child: Text(
+                            text[index].toUpperCase(),
+                            textAlign: TextAlign.center,
                           ),
-                        );
-                      }),
+                        ),
+                      );
+                    },
+                  ),
                 ),
             ],
           ),

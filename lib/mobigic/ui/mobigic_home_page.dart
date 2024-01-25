@@ -71,7 +71,7 @@ class _MobigicHomePageState extends State<MobigicHomePage> {
                   child: GridView.builder(
                       itemCount: (_grid[0].length * _grid.length),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 5,
+                        childAspectRatio: 1,
                         crossAxisCount: _grid[0].length,
                       ),
                       itemBuilder: (context, index) {
