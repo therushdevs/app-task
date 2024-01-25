@@ -19,4 +19,6 @@ class Assets {
   static const top03 = './assets/promilo/top/top03.jpg';
   static const top04 = './assets/promilo/top/top04.jpg';
   static const top05 = './assets/promilo/top/top05.jpg';
+
+  static const mobigicLogo = './assets/mobigic/mobigic_logo.png';
 }
