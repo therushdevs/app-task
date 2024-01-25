@@ -28,47 +28,51 @@ class _MobigicHomePageState extends State<MobigicHomePage> {
       appBar: AppBar(
         title: const Text('Mobigic Grid'),
       ),
-      body: Column(
-        children: [
-          TextFormField(
-            controller: _searchTextController,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              suffixIcon: IconButton(
-                onPressed: () {
-                  setState(() {
-                    result = getWordIndices(_grid, _searchTextController.text);
-                  });
-                  print('result: ${result}');
-                },
-                icon: const Icon(Icons.search),
+      body: SafeArea(
+        minimum: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            TextFormField(
+              controller: _searchTextController,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      result =
+                          getWordIndices(_grid, _searchTextController.text);
+                    });
+                    print('result: ${result}');
+                  },
+                  icon: const Icon(Icons.search),
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: GridView.builder(
-                itemCount: (_grid[0].length * _grid.length),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 5,
-                  crossAxisCount: _grid[0].length,
-                ),
-                itemBuilder: (context, index) {
-                  int row = index ~/ _grid[0].length;
-                  int col = index % _grid[0].length;
-                  final indexList = [row, col];
-                  return Container(
-                    margin: const EdgeInsets.all(4),
-                    color: contains(indexList) ? Colors.blue : null,
-                    child: Center(
-                      child: Text(
-                        _grid[row][col],
-                        textAlign: TextAlign.center,
+            Expanded(
+              child: GridView.builder(
+                  itemCount: (_grid[0].length * _grid.length),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 5,
+                    crossAxisCount: _grid[0].length,
+                  ),
+                  itemBuilder: (context, index) {
+                    int row = index ~/ _grid[0].length;
+                    int col = index % _grid[0].length;
+                    final indexList = [row, col];
+                    return Container(
+                      margin: const EdgeInsets.all(4),
+                      color: contains(indexList) ? Colors.blue : null,
+                      child: Center(
+                        child: Text(
+                          _grid[row][col],
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                  );
-                }),
-          ),
-        ],
+                    );
+                  }),
+            ),
+          ],
+        ),
       ),
     );
   }
