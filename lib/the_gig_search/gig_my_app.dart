@@ -1,4 +1,6 @@
 import 'package:api_task/the_gig_search/gig_splash_page.dart';
+import 'package:api_task/the_gig_search/routing/route_generator.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 class GigMyApp extends StatelessWidget {
@@ -7,9 +9,9 @@ class GigMyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // navigatorKey: navKey,
-      // initialRoute: Routes.splashPageRoute,
-      // onGenerateRoute: RouteGenerator.onGenerateRoute,
+      navigatorKey: navKey,
+      initialRoute: Routes.gigSplashPageRoute,
+      onGenerateRoute: RouteGenerator.onGenerateRoute,
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 245, 248, 250),
         useMaterial3: false,
