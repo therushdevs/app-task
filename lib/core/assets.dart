@@ -21,4 +21,10 @@ class Assets {
   static const top05 = './assets/promilo/top/top05.jpg';
 
   static const mobigicLogo = './assets/mobigic/mobigic_logo.png';
+
+  static const gigLogo = './assets/gig/gig_logo.png';
+  static const blueCheck = './assets/gig/blue_check.png';
+  static const checkIcon = './assets/gig/check_icon.png';
+  static const group = './assets/gig/group.png';
+  static const individual = './assets/gig/individual.png';
 }
