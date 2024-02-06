@@ -12,4 +12,5 @@ class Routes {
       '/gig_verification_in_progress_page';
   static const String gigVerificationSuccessPageRoute =
       '/gig_verification_success_page';
+  static const String gigSsoPageRoute = '/gig_sso_page';
 }

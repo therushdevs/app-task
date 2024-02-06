@@ -2,6 +2,7 @@ import 'package:api_task/the_gig_search/gig_splash_page.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:api_task/the_gig_search/ui/gig_create_account_page.dart';
 import 'package:api_task/the_gig_search/ui/gig_explore_the_app_page.dart';
+import 'package:api_task/the_gig_search/ui/gig_sso_page.dart';
 import 'package:api_task/the_gig_search/ui/gig_user_type_seletion.dart';
 import 'package:api_task/the_gig_search/ui/gig_verification_in_progress_page.dart';
 import 'package:api_task/the_gig_search/ui/gig_verification_success_page.dart';
@@ -34,6 +35,10 @@ class RouteGenerator {
       case Routes.gigVerificationSuccessPageRoute:
         return MaterialPageRoute(
           builder: (_) => const GigVerificationSuccess(),
+        );
+      case Routes.gigSsoPageRoute:
+        return MaterialPageRoute(
+          builder: (_) => const GigSsoPage(),
         );
       default:
         return _errorRoute();
