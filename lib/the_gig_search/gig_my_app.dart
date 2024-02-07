@@ -73,7 +73,7 @@ class _GigMyAppState extends State<GigMyApp> {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const GigSplashPage(),
+      // home: const GigSplashPage(),
     );
   }
 }

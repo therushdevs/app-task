@@ -1,5 +1,6 @@
 import 'package:api_task/finmapp(airpay)/providers/QuestionsProvider.dart';
 import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
+import 'package:api_task/firebase_options.dart';
 import 'package:api_task/fydaa/app.dart';
 import 'package:api_task/fydaa/providers/fyaa_auth_provider.dart';
 import 'package:api_task/mobigic/mobigic_app..dart';
@@ -13,7 +14,9 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     const GigMyApp(),
   );
