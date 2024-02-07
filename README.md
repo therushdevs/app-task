@@ -15,6 +15,9 @@ This repo contains the application tasks.
 
 ## Screenshots
 
+TGS Task                 |  TGS Task               |  TGS Task               |  TGS Task               |  TGS Task               |  TGS Task               |  TGS Task               |  TGS Task               |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+ ![WhatsApp Image 2024-02-08 at 3 08 19 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/ad38a7b3-f686-4117-9b3b-776c51215431)|![WhatsApp Image 2024-02-08 at 3 08 20 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/fbf05cbe-2e74-44d4-9b5d-9eedf1fcb430) | ![WhatsApp Image 2024-02-08 at 3 08 20 AM (1)](https://github.com/the-dapp-coder/app-task/assets/51785772/f9b46010-040b-4f2c-83b9-571cdad6395f) | ![WhatsApp Image 2024-02-08 at 3 08 20 AM (2)](https://github.com/the-dapp-coder/app-task/assets/51785772/7213ac48-b2b6-4178-b0b9-c075692681d6)| ![WhatsApp Image 2024-02-08 at 3 08 21 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/633e747e-6912-4105-a2ac-f84a8d155d74)| ![WhatsApp Image 2024-02-08 at 3 08 21 AM (1)](https://github.com/the-dapp-coder/app-task/assets/51785772/d7b50575-62c7-42da-bfdf-63fc5228f86d)|![WhatsApp Image 2024-02-08 at 3 08 21 AM (2)](https://github.com/the-dapp-coder/app-task/assets/51785772/c9c1e2ec-4244-4964-b302-4afc1d8406b3) | ![WhatsApp Image 2024-02-08 at 3 08 22 AM](https://github.com/the-dapp-coder/app-task/assets/51785772/255d334c-10da-4ea7-9f66-f59bbb2fff72)| 
 
 Mobigic Task                 |  Mobigic Task               |  Mobigic Task               |  Mobigic Task               |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
