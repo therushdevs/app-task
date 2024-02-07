@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:api_task/core/assets.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class GigSplashPage extends StatefulWidget {
   const GigSplashPage({super.key});
@@ -32,12 +34,16 @@ class _GigSplashPageState extends State<GigSplashPage> {
             Routes.gigVerificationSuccessPageRoute, (route) => false);
       }
     });
+    // FlutterNativeSplash.remove();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
+      body: Center(
+        child: Image.asset(Assets.gigLogo),
+      ),
     );
   }
 }

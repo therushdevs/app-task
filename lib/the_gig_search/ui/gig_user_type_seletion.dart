@@ -1,6 +1,7 @@
 import 'package:api_task/core/assets.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:api_task/the_gig_search/utils/constants.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class GigUserTypeSelectionPage extends StatelessWidget {
@@ -46,12 +47,29 @@ class GigUserTypeSelectionPage extends StatelessWidget {
                 ),
               ],
             ),
-            const Center(
+            Center(
               child: Text.rich(
                 TextSpan(
-                  text: 'Already have an account? Login',
+                  text: 'Already have an account? ',
                   style: mediumBlack12,
-                  children: [],
+                  children: [
+                    TextSpan(
+                      text: 'Log in',
+                      style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 12,
+                        color: Color(0xff2805FF),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          navKey.currentState!.pushNamed(
+                            Routes.gigCreateAccountPageRoute,
+                            arguments: {'isLogin': true},
+                          );
+                        },
+                    ),
+                  ],
                 ),
               ),
             ),

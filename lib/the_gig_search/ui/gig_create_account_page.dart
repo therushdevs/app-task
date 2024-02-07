@@ -3,6 +3,7 @@ import 'package:api_task/promilo/widgets/loader.dart';
 import 'package:api_task/the_gig_search/providers/create_account_provider.dart';
 import 'package:api_task/the_gig_search/providers/sso_provider.dart';
 import 'package:api_task/the_gig_search/utils/constants.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -175,14 +176,29 @@ class _GigCreateAccountPageState extends State<GigCreateAccountPage> {
                       child: Text(widget.isLogin ? 'Login' : 'Create Account'),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 45.0),
-                    child: Text.rich(
-                      TextSpan(
-                        text:
-                            'By creating an account or signing in you agree to out Terms and Conditions',
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 45.0),
+                    child: Center(
+                      child: Text.rich(
+                        TextSpan(
+                          text:
+                              'By creating an account or signing in you agree to our ',
+                          style: mediumBlack12,
+                          children: [
+                            TextSpan(
+                              text: 'Terms & Conditions',
+                              style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 12,
+                                color: Color(0xff2805FF),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              recognizer: TapGestureRecognizer()..onTap = () {},
+                            ),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],

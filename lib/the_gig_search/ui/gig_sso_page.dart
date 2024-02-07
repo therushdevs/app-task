@@ -4,6 +4,7 @@ import 'package:api_task/the_gig_search/providers/sso_provider.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:api_task/the_gig_search/utils/constants.dart';
 import 'package:api_task/the_gig_search/widgets/secondary_elevated_button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,12 @@ class GigSsoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: const EdgeInsets.only(top: 30, right: 16, left: 16),
+        minimum: const EdgeInsets.only(
+          top: 30,
+          right: 16,
+          left: 16,
+          bottom: 16,
+        ),
         child: Stack(
           children: [
             Column(
@@ -69,9 +75,32 @@ class GigSsoPage extends StatelessWidget {
                         text: 'Continue with Email',
                       ),
                     ),
-                    // const Text.rich(
-                    //   TextSpan(text: 'Already have an account? Log in'),
-                    // ),
+                    Center(
+                      child: Text.rich(
+                        TextSpan(
+                          text: 'Already have an account? ',
+                          style: mediumBlack12,
+                          children: [
+                            TextSpan(
+                              text: 'Log in',
+                              style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 12,
+                                color: Color(0xff2805FF),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  navKey.currentState!.pushNamed(
+                                    Routes.gigCreateAccountPageRoute,
+                                    arguments: {'isLogin': true},
+                                  );
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],
