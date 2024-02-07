@@ -1,5 +1,7 @@
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:api_task/the_gig_search/utils/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class GigVerificationSuccess extends StatefulWidget {
@@ -37,7 +39,12 @@ class _GigVerificationSuccessState extends State<GigVerificationSuccess> {
             Padding(
               padding: const EdgeInsets.only(top: 28.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+
+                  navKey.currentState!.pushNamedAndRemoveUntil(
+                      Routes.gigSplashPageRoute, (route) => false);
+                },
                 child: const Text('Continue'),
               ),
             ),

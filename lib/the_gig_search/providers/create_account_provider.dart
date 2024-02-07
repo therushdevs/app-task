@@ -2,21 +2,18 @@ import 'package:api_task/core/toasts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class CreateUserProvider extends ChangeNotifier {
+class CreateAccountProvider extends ChangeNotifier {
   bool isLoading = false;
-  bool success = false;
-  late UserCredential userCredential;
   void createAccountWithEmailAndPassword(String email, String password) async {
     isLoading = true;
+    notifyListeners();
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      success = true;
       isLoading = false;
-      userCredential = credential;
     } on FirebaseAuthException catch (e) {
       isLoading = false;
       if (e.code == 'weak-password') {
@@ -35,5 +32,6 @@ class CreateUserProvider extends ChangeNotifier {
         toastMessage: 'AuthError: ${e.toString()}',
       );
     }
+    notifyListeners();
   }
 }

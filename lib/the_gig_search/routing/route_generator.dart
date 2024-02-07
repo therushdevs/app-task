@@ -11,12 +11,22 @@ import 'package:flutter/material.dart';
 class RouteGenerator {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final routes = settings.name;
+    final params = settings.arguments;
     switch (routes) {
       case Routes.gigSplashPageRoute:
         return MaterialPageRoute(
           builder: (_) => const GigSplashPage(),
         );
       case Routes.gigCreateAccountPageRoute:
+        if (params is Map) {
+          print('Inside arguments');
+          final isLogin = params['isLogin'];
+          return MaterialPageRoute(
+            builder: (_) => GigCreateAccountPage(
+              isLogin: isLogin,
+            ),
+          );
+        }
         return MaterialPageRoute(
           builder: (_) => const GigCreateAccountPage(),
         );
