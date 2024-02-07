@@ -27,4 +27,7 @@ class Assets {
   static const checkIcon = './assets/gig/check_icon.png';
   static const group = './assets/gig/group.png';
   static const individual = './assets/gig/individual.png';
+  static const googleIcon = './assets/gig/google_logo.png';
+  static const appleIcon = './assets/gig/apple_logo.png';
+  static const messageIcon = './assets/gig/message_logo.png';
 }
