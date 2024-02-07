@@ -1,10 +1,28 @@
 import 'package:api_task/the_gig_search/gig_splash_page.dart';
 import 'package:api_task/the_gig_search/routing/route_generator.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class GigMyApp extends StatelessWidget {
+class GigMyApp extends StatefulWidget {
   const GigMyApp({super.key});
+
+  @override
+  State<GigMyApp> createState() => _GigMyAppState();
+}
+
+class _GigMyAppState extends State<GigMyApp> {
+  @override
+  void initState() {
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        print('User is signed in!');
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
