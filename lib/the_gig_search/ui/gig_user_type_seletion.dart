@@ -1,4 +1,5 @@
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 class GigUserTypeSelectionPage extends StatelessWidget {
@@ -43,6 +44,9 @@ class GigUserTypeSelectionPage extends StatelessWidget {
       required String subTitle,
       required String imageAsset}) {
     return ListTile(
+      onTap: () {
+        navKey.currentState?.pushNamed(Routes.gigExploreTheAppPageRoute);
+      },
       title: Text(title),
       subtitle: Text(subTitle),
       leading: Image.asset(imageAsset),

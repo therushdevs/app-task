@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 class GigVerificationInProgress extends StatefulWidget {
@@ -10,6 +13,14 @@ class GigVerificationInProgress extends StatefulWidget {
 }
 
 class _GigVerificationInProgressState extends State<GigVerificationInProgress> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 1), () {
+      navKey.currentState?.pushNamed(Routes.gigVerificationSuccessPageRoute);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

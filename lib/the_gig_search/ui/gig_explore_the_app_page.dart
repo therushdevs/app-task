@@ -1,4 +1,5 @@
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 class GigExploreTheAppPage extends StatefulWidget {
@@ -19,11 +20,15 @@ class _GigExploreTheAppPageState extends State<GigExploreTheAppPage> {
           const Text(
               'Now your finances are in one place and always under control'),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              navKey.currentState?.pushNamed(Routes.gigSsoPageRoute);
+            },
             child: const Text('Sign In'),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              navKey.currentState?.pushNamed(Routes.gigCreateAccountPageRoute);
+            },
             child: const Text('Create Account'),
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 class GigSsoPage extends StatefulWidget {
@@ -21,6 +22,10 @@ class _GigSsoPageState extends State<GigSsoPage> {
           _roundedSsoButton(
             assetImage: Assets.googleIcon,
             text: 'Continue with Google',
+            onPressed: () {
+              navKey.currentState
+                  ?.pushNamed(Routes.gigVerificationInProgressPageRoute);
+            },
           ),
           _roundedSsoButton(
             assetImage: Assets.appleIcon,
