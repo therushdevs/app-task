@@ -15,12 +15,10 @@ class _GigSplashPageState extends State<GigSplashPage> {
   @override
   void initState() {
     super.initState();
-    // Timer(const Duration(seconds: 1), () {
-    //   navKey.currentState?.pushNamedAndRemoveUntil(
-    //     Routes.gigUserTypeSelectionPageRoute,
-    //     (route) => false,
-    //   );
-    // });
+    _startTimer();
+  }
+
+  Future<void> _startTimer() async {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user == null) {
         print('User is currently signed out!');

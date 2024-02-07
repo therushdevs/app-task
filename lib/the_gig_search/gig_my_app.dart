@@ -9,18 +9,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class GigMyApp extends StatefulWidget {
+class GigMyApp extends StatelessWidget {
   const GigMyApp({super.key});
-
-  @override
-  State<GigMyApp> createState() => _GigMyAppState();
-}
-
-class _GigMyAppState extends State<GigMyApp> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

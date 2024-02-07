@@ -18,7 +18,10 @@ class _GigVerificationInProgressState extends State<GigVerificationInProgress> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 1), () {
-      navKey.currentState?.pushNamed(Routes.gigVerificationSuccessPageRoute);
+      navKey.currentState?.pushNamedAndRemoveUntil(
+        Routes.gigVerificationSuccessPageRoute,
+        (route) => false,
+      );
     });
   }
 

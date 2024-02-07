@@ -1,5 +1,4 @@
 import 'package:api_task/core/assets.dart';
-import 'package:api_task/core/toasts.dart';
 import 'package:api_task/promilo/widgets/loader.dart';
 import 'package:api_task/the_gig_search/providers/create_account_provider.dart';
 import 'package:api_task/the_gig_search/providers/sso_provider.dart';

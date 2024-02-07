@@ -38,16 +38,18 @@ class GigSsoPage extends StatelessWidget {
                     _roundedSsoButton(
                       assetImage: Assets.googleIcon,
                       text: 'Continue with Google',
-                      onPressed: () async {
+                      onPressed: () {
                         // navKey.currentState
                         //     ?.pushNamed(Routes.gigVerificationInProgressPageRoute);
-                        await context.read<SsoProvider>().googleSso();
+                        context.read<SsoProvider>().googleSso();
                       },
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 34.0),
                       child: _roundedSsoButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.read<SsoProvider>().appleSso();
+                        },
                         assetImage: Assets.appleIcon,
                         text: 'Continue with Apple',
                       ),
