@@ -1,5 +1,6 @@
 import 'package:api_task/core/assets.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
+import 'package:api_task/the_gig_search/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class GigUserTypeSelectionPage extends StatelessWidget {
@@ -8,48 +9,86 @@ class GigUserTypeSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset(Assets.gigLogo),
-          const Text('Join Us'),
-          const Text(
-              'To begin this journey, tell us what type of content you\'d be opening.'),
-          Column(
-            children: [
-              _createLoginCard(
-                title: 'Individual',
-                subTitle: 'Looking for jobs',
-                imageAsset: Assets.individual,
+      body: SafeArea(
+        minimum: const EdgeInsets.only(top: 30, right: 16, left: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Image.asset(
+                Assets.gigLogo,
+                alignment: Alignment.center,
               ),
-              _createLoginCard(
-                title: 'Company',
-                subTitle: 'Looking for staff',
-                imageAsset: Assets.group,
-              ),
-            ],
-          ),
-          const Text.rich(
-            TextSpan(
-              text: 'Already have an account? Login',
-              children: [],
             ),
-          ),
-        ],
+            const Text(
+              'Join Us',
+              style: boldBlack30,
+            ),
+            const Text(
+              'To begin this journey, tell us what type of content you\'d be opening.',
+              style: mediumGrey18,
+            ),
+            Column(
+              children: [
+                _createLoginCard(
+                  title: 'Individual',
+                  subTitle: 'Looking for jobs',
+                  imageAsset: Assets.individual,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 24.0),
+                  child: _createLoginCard(
+                    title: 'Company',
+                    subTitle: 'Looking for staff',
+                    imageAsset: Assets.group,
+                  ),
+                ),
+              ],
+            ),
+            const Center(
+              child: Text.rich(
+                TextSpan(
+                  text: 'Already have an account? Login',
+                  style: mediumBlack12,
+                  children: [],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _createLoginCard(
-      {required String title,
-      required String subTitle,
-      required String imageAsset}) {
-    return ListTile(
-      onTap: () {
-        navKey.currentState?.pushNamed(Routes.gigExploreTheAppPageRoute);
-      },
-      title: Text(title),
-      subtitle: Text(subTitle),
-      leading: Image.asset(imageAsset),
+  Widget _createLoginCard({
+    required String title,
+    required String subTitle,
+    required String imageAsset,
+  }) {
+    return Card(
+      child: ListTile(
+        horizontalTitleGap: 28,
+        contentPadding: const EdgeInsets.all(28),
+        onTap: () {
+          navKey.currentState?.pushNamed(Routes.gigExploreTheAppPageRoute);
+        },
+        title: Text(
+          title,
+          style: mediumBlack16,
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 13.0),
+          child: Text(
+            subTitle,
+            style: mediumGrey14,
+          ),
+        ),
+        leading: Image.asset(
+          imageAsset,
+          alignment: Alignment.center,
+        ),
+      ),
     );
   }
 }

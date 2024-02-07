@@ -1,6 +1,7 @@
 import 'package:api_task/the_gig_search/gig_splash_page.dart';
 import 'package:api_task/the_gig_search/routing/route_generator.dart';
 import 'package:api_task/the_gig_search/routing/routes.dart';
+import 'package:api_task/the_gig_search/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -42,22 +43,17 @@ class _GigMyAppState extends State<GigMyApp> {
             color: Colors.black,
           ),
         ),
-        elevatedButtonTheme: const ElevatedButtonThemeData(
-          style: ButtonStyle(
-            alignment: Alignment.center,
-            elevation: MaterialStatePropertyAll(0),
-            // backgroundColor: const MaterialStatePropertyAll(
-            //     Color.fromARGB(255, 143, 157, 247)),
-            // shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            //   RoundedRectangleBorder(
-            //     borderRadius: BorderRadius.circular(6.0),
-            //     side: BorderSide(
-            //       color: Colors.blue.shade700,
-            //       width: 2.5,
-            //       style: BorderStyle.solid,
-            //     ),
-            //   ),
-            // ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            minimumSize: const Size.fromHeight(55),
+            backgroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              side: const BorderSide(
+                width: 2,
+                style: BorderStyle.solid,
+              ),
+            ),
           ),
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(

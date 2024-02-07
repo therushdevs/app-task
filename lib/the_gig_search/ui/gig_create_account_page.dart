@@ -1,4 +1,5 @@
 import 'package:api_task/core/assets.dart';
+import 'package:api_task/the_gig_search/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class GigCreateAccountPage extends StatefulWidget {
@@ -34,60 +35,98 @@ class _GigCreateAccountPageState extends State<GigCreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset(Assets.gigLogo),
-          const Text('Create Account'),
-          TextFormField(
-            controller: _emailController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              hintText: 'Email Address',
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        minimum: const EdgeInsets.symmetric(
+          horizontal: 11,
+          vertical: 17,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: Image.asset(Assets.gigLogo),
             ),
-          ),
-          TextFormField(
-            controller: _passwordController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              hintText: 'Password',
-              suffixIcon: IconButton(
-                onPressed: () {
-                  setState(() {
-                    _showPassword = !_showPassword;
-                  });
-                },
-                icon: const Icon(Icons.visibility),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 34.0),
+              child: Text(
+                'Create Account',
+                style: boldBlack30,
               ),
             ),
-          ),
-          TextFormField(
-            controller: _confirmPasswordController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              hintText: 'Confirm Password',
-              suffixIcon: IconButton(
-                onPressed: () {
-                  setState(() {
-                    _showConfirmPassword = !_showConfirmPassword;
-                  });
-                },
-                icon: const Icon(Icons.visibility),
+            TextFormField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                hintText: 'Email Address',
               ),
             ),
-          ),
-          RichText(
-            text: const TextSpan(
-              text:
-                  'By creating an account or signing in you agree to out Terms and Conditions',
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 34.0),
+              child: TextFormField(
+                obscureText: !_showPassword,
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  hintText: 'Password',
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _showPassword = !_showPassword;
+                      });
+                    },
+                    icon: Icon(
+                      _showPassword ? Icons.visibility : Icons.visibility_off,
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
-        ],
+            TextFormField(
+              obscureText: !_showConfirmPassword,
+              controller: _confirmPasswordController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                hintText: 'Confirm Password',
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _showConfirmPassword = !_showConfirmPassword;
+                    });
+                  },
+                  icon: Icon(
+                    _showConfirmPassword
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 34.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Create Account'),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 45.0),
+              child: Text.rich(
+                TextSpan(
+                  text:
+                      'By creating an account or signing in you agree to out Terms and Conditions',
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
