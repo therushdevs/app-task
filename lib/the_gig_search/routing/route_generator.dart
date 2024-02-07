@@ -49,7 +49,7 @@ class RouteGenerator {
     return MaterialPageRoute(
       builder: (_) => const Scaffold(
         body: Center(
-          child: Text('Error ROute'),
+          child: Text('Error Route'),
         ),
       ),
     );

@@ -15,8 +15,10 @@ class _GigSplashPageState extends State<GigSplashPage> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 1), () {
-      navKey.currentState
-          ?.pushReplacementNamed(Routes.gigUserTypeSelectionPageRoute);
+      navKey.currentState?.pushNamedAndRemoveUntil(
+        Routes.gigUserTypeSelectionPageRoute,
+        (route) => false,
+      );
     });
   }
 
