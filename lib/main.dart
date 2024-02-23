@@ -1,3 +1,4 @@
+import 'package:api_task/cognota/cognota_app.dart';
 import 'package:api_task/finmapp(airpay)/providers/QuestionsProvider.dart';
 import 'package:api_task/finmapp(airpay)/providers/responses_provider.dart';
 import 'package:api_task/firebase_options.dart';
@@ -20,7 +21,7 @@ void main() async {
   );
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(
-    const GigMyApp(),
+    const CognotaApp(),
   );
 
   // mobigic entry point
