@@ -54,6 +54,12 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 4.0, vertical: 15),
                     child: TextFormField(
+                      validator: (val) {
+                        if (val == null || val.isEmpty) {
+                          return "Title cannot be empty";
+                        }
+                        return null;
+                      },
                       controller: _titleController,
                       maxLines: 3,
                       decoration: const InputDecoration(
@@ -67,6 +73,12 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 4.0, vertical: 15),
                     child: TextFormField(
+                      validator: (val) {
+                        if (val == null || val.isEmpty) {
+                          return "Title cannot be empty";
+                        }
+                        return null;
+                      },
                       controller: _descriptionController,
                       maxLines: 3,
                       decoration: const InputDecoration(
@@ -80,7 +92,12 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 4.0, vertical: 15),
                     child: TextFormField(
-                      // initialValue: DateTime.now().toString(),
+                      validator: (val) {
+                        if (_dateController.text.isEmpty) {
+                          return "Date cannot be empty";
+                        }
+                        return null;
+                      },
                       controller: _dateController,
                       onChanged: (val) {},
                       maxLines: 3,
