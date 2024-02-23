@@ -38,6 +38,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: const Text('Add/Update'),
       ),
@@ -75,7 +76,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     child: TextFormField(
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return "Title cannot be empty";
+                          return "Descriotion cannot be empty";
                         }
                         return null;
                       },

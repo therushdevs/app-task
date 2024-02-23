@@ -37,6 +37,7 @@ class _HomePageCognotaState extends State<HomePageCognota> {
 
                 return data != null && data.isNotEmpty
                     ? ListView.builder(
+                        shrinkWrap: true,
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return Card(
