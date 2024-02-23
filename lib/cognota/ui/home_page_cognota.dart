@@ -51,7 +51,7 @@ class _HomePageCognotaState extends State<HomePageCognota> {
                       },
                     )
                   : const Center(
-                      child: CircularProgressIndicator(),
+                      child: Text('No Tasks present'),
                     );
             } else if (snapshot.hasError) {
               print('Error: ${snapshot.error}');

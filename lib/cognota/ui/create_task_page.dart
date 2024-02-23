@@ -16,12 +16,14 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _titleController;
   late TextEditingController _descriptionController;
+  late TextEditingController _dateController;
   DateTime? _pickedDate;
   @override
   void initState() {
     super.initState();
     _titleController = TextEditingController();
     _descriptionController = TextEditingController();
+    _dateController = TextEditingController();
   }
 
   @override
@@ -30,6 +32,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
     _titleController.dispose();
     _descriptionController.dispose();
     _formKey.currentState?.dispose();
+    _dateController.dispose();
   }
 
   @override
@@ -77,6 +80,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 4.0, vertical: 15),
                     child: TextFormField(
+                      // initialValue: DateTime.now().toString(),
+                      controller: _dateController,
+                      onChanged: (val) {},
                       maxLines: 3,
                       decoration: const InputDecoration(
                         alignLabelWithHint: true,
@@ -89,6 +95,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                           firstDate: DateTime.now(),
                           lastDate: DateTime(2050),
                         );
+                        _dateController.text = _pickedDate.toString();
                       },
                     ),
                   ),
@@ -97,20 +104,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    final sharedPref = await SharedPreferences.getInstance();
-                    final taskModel = TaskModel(
-                      title: _titleController.text,
-                      description: _descriptionController.text,
-                      dateTime: _pickedDate ?? DateTime.now(),
-                    ).toJson();
-                    final string = sharedPref.getString('tasks');
-                    final List<dynamic> listOld =
-                        jsonDecode(string.toString()) ?? [];
-                    final List<dynamic> list = listOld;
-                    list.add(taskModel);
-                    await sharedPref.setString('tasks', jsonEncode(list));
-                    cNavKey.currentState!.pushNamedAndRemoveUntil(
-                        Routes.homePageRoute, (route) => false);
+                    await _saveTaskToPref();
                   }
                 },
                 child: const Text('Submit'),
@@ -120,5 +114,22 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _saveTaskToPref() async {
+    final sharedPref = await SharedPreferences.getInstance();
+    final taskModel = TaskModel(
+      title: _titleController.text,
+      description: _descriptionController.text,
+      dateTime: _pickedDate ?? DateTime.now(),
+    ).toJson();
+    final string = sharedPref.getString('tasks');
+    final List<dynamic> listOld = jsonDecode(string.toString()) ?? [];
+    final List<dynamic> list = listOld;
+    list.add(taskModel);
+    await sharedPref.setString('tasks', jsonEncode(list));
+    // navigate after saving
+    cNavKey.currentState!
+        .pushNamedAndRemoveUntil(Routes.homePageRoute, (route) => false);
   }
 }
